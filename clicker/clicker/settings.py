@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auth_clicker',
-    'frontend',
     'backend',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,9 @@ ROOT_URLCONF = 'clicker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "frontend/templates",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
