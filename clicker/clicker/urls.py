@@ -20,5 +20,6 @@ from auth_clicker import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('auth_clicker.urls'))
+    path('', include('auth_clicker.urls')),
+    path('', include('backend.urls'))
 ]
