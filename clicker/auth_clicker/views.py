@@ -22,15 +22,6 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializerDetail
 
 
-# def index(request):
-#     user = User.objects.filter(id=request.user.id)
-#     if len(user) != 0:
-#         core = Core.objects.get(user=request.user)
-#         return render(request, 'index.html', {'core': core})
-#     else:
-#         return redirect('login')
-
-
 def index(request):
     user = User.objects.filter(id=request.user.id)
     if len(user) != 0:
