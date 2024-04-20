@@ -9,6 +9,7 @@ from .forms import UserForm
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from backend.models import Core
+from django.apps import apps
 
 
 class UserList(generics.ListAPIView):
@@ -21,11 +22,27 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializerDetail
 
 
+# def index(request):
+#     user = User.objects.filter(id=request.user.id)
+#     if len(user) != 0:
+#         core = Core.objects.get(user=request.user)
+#         return render(request, 'index.html', {'core': core})
+#     else:
+#         return redirect('login')
+
+
 def index(request):
     user = User.objects.filter(id=request.user.id)
     if len(user) != 0:
-        core = Core.objects.get(user=request.user)
-        return render(request, 'index.html', {'core': core})
+        coreModel = apps.get_model('backend', 'Core')
+        boostsModel = apps.get_model('backend', 'Boost')
+        core = coreModel.objects.get(user=request.user)
+        boosts = boostsModel.objects.filter(core=core)
+
+        return render(request, 'index.html', {
+            'core': core,
+            'boosts': boosts,
+        })
     else:
         return redirect('login')
 
