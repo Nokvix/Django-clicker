@@ -1,38 +1,50 @@
 {% load static %}
 
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Кликер</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-</head>
-<body>
+  </head>
+  <body class="index-page">
     <main class="app">
-        <nav class="nav">
-            Привет, {{user.username}}
+      <nav class="nav">
+        <div class="greeting">Привет, {{user.username}}</div>
+        <div class="logout">
+          <button class="logout-btn">
             <a href="{% url 'logout' %}">Выйти</a>
-        </nav>
-        <div class="container">
-            <div id="coins">{{core.coins}}</div>
-            <button onclick="call_click()">Жёсткий фарм</button>
-            <p>
-                Мощь фарма: <span id="click_power">{{ core.click_power }}</span>
-            </p>
+          </button>
         </div>
+      </nav>
+      <div class="container">
+        <div id="coins">{{core.coins}}</div>
+        <div class="farming-power">
+          <p>
+            Мощь фарма: <span id="click_power">{{ core.click_power }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="farming">
+        <button class="farming-btn" onclick="call_click()">Жёсткий фарм</button>
+      </div>
 
-        <aside class="boosts" id="boosts">
-            <h3>Бусты</h3>
-            <div class="boosts-holder" id="boosts-holder">
-                {% for boost in boosts %}
-                <button class="boost" id="boost_{{boost.id}}" onclick="buy_boost({{boost.id}})">
-                    <p>Уровень: <span id="boost_level">{{boost.lvl}}</span></p>
-                    <p>+<span id="boost-power">{{boost.power}}</span></p>
-                    <p>Цена: <span id="boost_price">{{boost.price}}</span></p>
-                </button>
-                {% endfor %}
-            </div>
-        </aside>
+      <aside class="boosts" id="boosts">
+        <h3>Бусты</h3>
+        <div class="boosts-holder" id="boosts-holder">
+          {% for boost in boosts %}
+          <button
+            class="boost"
+            id="boost_{{boost.id}}"
+            onclick="buy_boost({{boost.id}})"
+          >
+            <p>Уровень: <span id="boost_level">{{boost.lvl}}</span></p>
+            <p>+<span id="boost-power">{{boost.power}}</span></p>
+            <p>Цена: <span id="boost_price">{{boost.price}}</span></p>
+          </button>
+          {% endfor %}
+        </div>
+      </aside>
     </main>
-</body>
+  </body>
 </html>

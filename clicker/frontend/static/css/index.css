@@ -1,0 +1,53 @@
+header {
+    background-color: darkcyan;
+    color: white;
+    height: 100px;
+}
+
+h3 {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 20px;
+}
+
+main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.logout-btn {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #FFF5C0;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.logout-btn a {
+    font-size: larger;
+    color: black;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    opacity: 0.7;
+}
+
+.logout-btn:active {
+    opacity: 0.5;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: larger;
+}
+
+.container {
+    font-size: larger;
+}

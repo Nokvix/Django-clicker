@@ -7,12 +7,12 @@ function call_click() {
         }
 
         return Promise.reject(response)
-        }).then(data => {
-            document.getElementById('coins').innerText = data.core.coins
-            if (data.is_levelup) {
-                get_boosts()
-            }
-        }).catch(error => console.log(error))
+    }).then(data => {
+        document.getElementById('coins').innerText = data.core.coins
+        if (data.is_levelup) {
+            get_boosts()
+        }
+    }).catch(error => console.log(error))
 }
 
 function get_boosts() {
