@@ -78,4 +78,4 @@ class UserRegistration(APIView):
 
     def get(self, request):
         form = UserForm()
-        return render(request, 'registration.html', {'invalid': True, 'form': form})
+        return render(request, 'registration.html', {'invalid': False, 'form': form})
