@@ -18,19 +18,21 @@
         </div>
       </nav>
       <div class="container">
-        <div id="coins">{{core.coins}}</div>
-        <div class="farming-power">
-          <p>
-            Мощь фарма: <span id="click_power">{{ core.click_power }}</span>
-          </p>
+        <div class="info">
+          <div id="coins">Количество монет: {{core.coins}}</div>
+          <div class="farming-power">
+            <p>
+              Мощь фарма: <span id="click_power">{{ core.click_power }}</span>
+            </p>
+          </div>
         </div>
       </div>
       <div class="farming">
         <button class="farming-btn" onclick="call_click()">Жёсткий фарм</button>
       </div>
 
+      <h3>Бусты</h3>
       <aside class="boosts" id="boosts">
-        <h3>Бусты</h3>
         <div class="boosts-holder" id="boosts-holder">
           {% for boost in boosts %}
           <button

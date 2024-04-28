@@ -8,7 +8,7 @@ function call_click() {
 
         return Promise.reject(response)
     }).then(data => {
-        document.getElementById('coins').innerText = data.core.coins
+        document.getElementById('coins').innerText = `Количество монет: ${data.core.coins}`
         if (data.is_levelup) {
             get_boosts()
         }
@@ -79,7 +79,9 @@ function buy_boost(boost_id) {
         const new_boost_stats = response.new_boost_stats
 
         const coinsElement = document.getElementById('coins')
-        coinsElement.innerText = Number(coinsElement.innerText) - old_boost_stats.price
+        const part = coinsElement.innerText.split(':')
+        const coins = Number(part[1].trim())
+        coinsElement.innerText = `Количество монет: ${coins - old_boost_stats.price}`
         const powerElement = document.getElementById('click_power')
         powerElement.innerText = Number(powerElement.innerText) + old_boost_stats.power
 

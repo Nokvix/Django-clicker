@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 header {
     background-color: darkcyan;
     color: white;
@@ -15,16 +21,20 @@ main {
     margin-bottom: 50px;
 }
 
+.index-page {
+    background-color: #FDF8DD;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
 .logout-btn {
     position: relative;
     text-align: center;
     color: white;
-}
-
-.logout-btn {
     background-color: #FFF5C0;
-    border-radius: 5px;
+    border-radius: 2vh;
     padding: 5px 10px;
+    border: 1px solid #ccc;
 }
 
 .logout-btn a {
@@ -46,8 +56,59 @@ main {
     justify-content: space-between;
     align-items: center;
     font-size: larger;
+    margin-bottom: 3vh;
+}
+
+.greeting {
+    font-size: 3.5vh;
 }
 
 .container {
     font-size: larger;
+}
+
+.info {
+    border: 1px solid;
+    padding: 2vh;
+    display: inline-block;
+    border-radius: 3vh;
+}
+
+.farming {
+    display: flex;
+    justify-content: center;
+}
+
+.farming-btn {
+    width: 35vh;
+    height: 12vh;
+    font-size: 4.5vh;
+    border-radius: 5vh;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #FFE663;
+    margin-bottom: 5vh;
+}
+
+.boosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.boost {
+    width: 20vh;
+    height: 10vh;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2vh;
+    cursor: pointer;
+    background-color: #FFF5C0;
+}
+
+h3 {
+    margin-bottom: 4vh;
+    font-size: 5vh;
+    font-weight: 500;
 }
